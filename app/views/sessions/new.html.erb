@@ -1,0 +1,8 @@
+<h1>Login</h1>
+
+<%= form_tag login_path do |f| %>
+  <h1>Create an Account</h1>
+  <%= text_field_tag :email %>
+  <%= password_field_tag, :password %>
+  <%= submit_tag %>
+<% end %>
