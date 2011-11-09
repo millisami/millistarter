@@ -15,9 +15,18 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  if RUBY_VERSION < '1.9'
+    gem "ruby-debug", ">= 0.10.3"
+  elsif RUBY_VERSION == '1.9.3'
+    gem 'ruby-debug-base19'  
+  else
+    gem "ruby-debug19", :require => 'ruby-debug'
+  end
 end
 
 group :test do
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
   gem 'turn', :require => false
   gem 'capybara'
   gem 'database_cleaner'
